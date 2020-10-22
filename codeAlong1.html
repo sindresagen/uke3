@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .content {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+        }
+        .contentButton {
+            background-color: red;
+        }
+    </style>
+    <title>Codealong #1 RandImgGen</title>
+    
+</head>
+<body>
+
+<div id="contentDiv" class="content"></div>
+<button class="contentButton" onclick="getImage()">Klikk her for bilde 🎲</button>
+
+    <script>
+
+        function getImage() {
+            var randomNr = Math.floor(Math.random() * 1001);
+            //console.log(randomNr, "random nr er dette");
+            document.getElementById('contentDiv').innerHTML = "<img style='height: auto; width: 100%' src='https://picsum.photos/id/"+ randomNr +"/200/300'>";
+        }
+    </script>
+</body>
+</html>
