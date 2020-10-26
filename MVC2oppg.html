@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        // model
+        var riktig;
+        var feil;
+
+        // view
+        updateView();
+        function updateView() {
+            var riktigTxt = riktig ? 'Riktig!' : '';
+            var feilTxt = feil ? 'Feil!' : '';
+            document.getElementById('app').innerHTML = `
+            <h2>Hva heter Asias største øy?</h2>
+            <h2 id="a1" onclick="doSomething()">Borneo ${riktigTxt}</h2>
+            <h2 id="a2" onclick="doSomething1()">Japan</h2>
+            <h2 id="a3" onclick="doSomething1()">Korea</h2>
+            ${feilTxt || riktigTxt}
+            `
+        }
+
+        // controller
+        function doSomething() {
+            feil = 0;
+            riktig = 1;
+            updateView();
+        }
+
+        function doSomething1() {
+            feil = 1;
+            riktig = 0;
+            updateView();
+        }
+
+
+    </script>
+
+</body>
+</html>
