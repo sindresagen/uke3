@@ -1,52 +1,83 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <p>Ferdighet 9b - Valgsetninger - Sammenligne to tekster</p>
-    <div id="info"></div>
-    <p>Endre på tekstene! (Prøv også å fylle ut tall: 11, 101, 102)</p>
-    <input type="text" id="txt1" oninput="findFirst()" value="Per" /><br />
-    <input type="text" id="txt2" oninput="findFirst()" value="Pål" /><br />
-    <input type="text" id="txt3" oninput="findFirst()" value="Espen" /><br />
-    <script>
-        var infoDiv = document.getElementById('info');
-        var txtDiv1 = document.getElementById('txt1');
-        var txtDiv2 = document.getElementById('txt2');
-        var txtDiv3 = document.getElementById('txt3');
+        <div id="app"></div>
 
-        findFirst();
+        
 
-        function findFirst() {
-            var txt1 = txtDiv1.value;
-            var txt2 = txtDiv2.value;
-            var txt3 = txtDiv3.value;
+        <script>
 
-            infoDiv.innerText = '';
+            //model
+            updateView();
+            var txt1;
+            var txt2;
+            var txt3;
+            var compareTxt1;
+            var compareTxt2;
+            var compareTxt3;
+            var alfabet;
 
-            if (txt1 == txt2) infoDiv.innerHTML += 'Tekst 1 og 2 er like<br/>';
-            if (txt1 != txt2) infoDiv.innerHTML += '<del>Tekst 1 og 2 er like</del><br/>';
+            //view
+            function updateView() {
+                document.getElementById('app').innerHTML = `
+                <p>Endre på tekstene! (Prøv også å fylle ut tall: 11, 101, 102)</p>
+                <input type="text" oninput="txt1 = this.value" value="${txt1 ? txt1 : ''}" /><br />
+                <input type="text" oninput="txt2 = this.value" value="${txt2 ? txt2 : ''}" /><br />
+                <input type="text" oninput="txt3 = this.value" value="${txt3 ? txt3 : ''}" /><br />
+                <button onclick="checkInput(); updateView();">Skjekk</button>
+                <div>${compareTxt1 ? compareTxt1 : ''}</div>
+                <div>${compareTxt2 ? compareTxt2 : ''}</div>
+                <div>${compareTxt3 ? compareTxt3 : ''}</div>
+                <div>Den som er numerisk/alfabetisk lavest verdi:${alfabet ? alfabet : ''}</div>
+                `;
+            };
 
-            //if (txt1 == txt2) infoDiv.innerHTML += 'Tekst 1 og 2 er like<br/>';
-            //else infoDiv.innerHTML += '<del>Tekst 1 og 2 er like</del><br/>';
+            //controller
+            function checkInput () {
+                updateView();
+                if (txt1 !== txt2) {
+                    compareTxt1 = '<del>Tekst 1 og 2 er ikke like</del><br/>';
+                } else {
+                    compareTxt1 = 'Tekst 1 og 2 er like<br/>';
+                }
+                if (txt1 !== txt3) {
+                    compareTxt2 = '<del>Tekst 1 og 3 er ikke like</del><br/>';
+                } else { 
+                    compareTxt2 = 'Tekst 1 og 3 er like<br/>';
+                }
+                if (txt2 !== txt3) {
+                    compareTxt3 = '<del>Tekst 2 og 3 er ikke like</del><br/>';
+                } else {
+                    compareTxt3 ='Tekst 2 og 3 er like<br/>';
+                }
+                if (txt1 <= txt2) {
+                    if (txt3 <= txt1) {
+                        alfabet = txt3;
+                    } else {
+                        alfabet = txt1;
+                    }
+                } else {
+                    if (txt3 <= txt2) {
+                        alfabet = txt3;
+                    } else {
+                        alfabet = txt2;
+                    }
+                }
+                // txt1 === txt2 ? compareTxt1 ='Tekst 1 og 2 er like<br/>' : '<del>Tekst 1 og 2 er ikke like</del><br/>';
+                // txt1 === txt3 ? compareTxt2 ='Tekst 1 og 3 er like<br/>' : '<del>Tekst 1 og 3 er ikke like</del><br/>';
+                // txt2 === txt3 ? compareTxt3 ='Tekst 2 og 3 er like<br/>' : '<del>Tekst 2 og 3 er ikke like</del><br/>';
+            
+            };
 
-            if (txt1 == txt3) infoDiv.innerHTML += 'Tekst 1 og 3 er like<br/>';
-            if (txt1 != txt3) infoDiv.innerHTML += '<del>Tekst 1 og 3 er like</del><br/>';
-            if (txt3 == txt2) infoDiv.innerHTML += 'Tekst 2 og 3 er like<br/>';
-            if (txt3 != txt2) infoDiv.innerHTML += '<del>Tekst 2 og 3 er like</del><br/>';
-
-            infoDiv.innerHTML += 'Om vi sorterer de tre tekstene, er denne den første:<br/>';
-            if (txt1 <= txt2) {
-                if (txt3 <= txt1) infoDiv.innerHTML += txt3;
-                else infoDiv.innerHTML += txt1;
-            } else {
-                if (txt3 <= txt2) infoDiv.innerHTML += txt3;
-                else infoDiv.innerHTML += txt2;
-            }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>

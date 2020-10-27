@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <button id="btn1" onclick="select(this)">1</button>
+            <button id="btn2" onclick="select(this)">2</button>
+            <button id="btn3" onclick="select(this)">3</button>
+        </tr>
+        <br>
+        <tr>
+            <button id="btn4" onclick="select(this)">4</button>
+            <button id="btn5" onclick="select(this)">5</button>
+            <button id="btn6" onclick="select(this)">6</button>
+        </tr>
+        <br>
+        <tr>
+            <button id="btn7" onclick="select(this)">7</button>
+            <button id="btn8" onclick="select(this)">8</button>
+            <button id="btn9" onclick="select(this)">9</button>
+        </tr>
+    </table>
+
+    <h2 id="info"></h2>
+
+    <script>
+        // model
+        var rightCode = 3812;
+        var wrongCode = 0;
+        // view
+        updateView();
+        function updateView() {
+            var openLock = rightCode == 0 ? '' : 'Åpen';
+            document.getElementById('info').innerHTML = `
+            <div>${openLock}</div>
+            `;
+
+        }
+
+        // controller
+        var selectedBtn = '';
+        function select(clickBtn) {
+            selectedBtn = clickBtn;
+            if (selectedBtn.id == 'btn1') {
+                document.getElementById('info').innerHTML += '<div>1</div>'
+            }if (selectedBtn.id == 'btn2') {
+                document.getElementById('info').innerHTML += '<div>2</div>'
+            }
+            if (selectedBtn.id == 'btn3') {
+                document.getElementById('info').innerHTML += '<div>3</div>'
+            }
+            if (selectedBtn.id == 'btn4') {
+                document.getElementById('info').innerHTML += '<div>4</div>'
+            }
+            if (selectedBtn.id == 'btn5') {
+                document.getElementById('info').innerHTML += '<div>5</div>'
+            }
+            if (selectedBtn.id == 'btn6') {
+                document.getElementById('info').innerHTML += '<div>6</div>'
+            }
+            if (selectedBtn.id == 'btn7') {
+                document.getElementById('info').innerHTML += '<div>7</div>'
+            }
+            if (selectedBtn.id == 'btn8') {
+                document.getElementById('info').innerHTML += '<div>8</div>'
+            }
+            if (selectedBtn.id == 'btn9') {
+                document.getElementById('info').innerHTML += '<div>9</div>'
+            }
+
+        }
+        
+        
+    </script>
+</body>
+</html>

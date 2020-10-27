@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    
+
+    <h2 id="info"></h2>
+
+    <script>
+        // model
+        var codeString = '';
+        var openLock = '';
+
+
+
+        // view
+        updateView();
+        function updateView() {
+           
+            document.getElementById('info').innerHTML = `
+
+            <tr>
+            <button id="btn1" onclick="countNum(1)">1</button>
+            <button id="btn2" onclick="countNum(2)">2</button>
+            <button id="btn3" onclick="countNum(3)">3</button>
+            </tr>
+            <br>
+            <tr>
+            <button id="btn4" onclick="countNum(4)">4</button>
+            <button id="btn5" onclick="countNum(5)">5</button>
+            <button id="btn6" onclick="countNum(6)">6</button>
+            </tr>
+            <br>
+            <tr>
+            <button id="btn7" onclick="countNum(7)">7</button>
+            <button id="btn8" onclick="countNum(8)">8</button>
+            <button id="btn9" onclick="countNum(9)">9</button>
+            </tr> 
+            <button id="chk" onclick="checkCode()">Enter</button>    
+            <div>${codeString}</div>
+            <div>${openLock}</div>
+            
+            `;
+
+        }
+
+        // controller
+        function countNum(number) {
+            codeString += number;
+            updateView();
+        }
+
+        function checkCode() {
+            if (codeString == '3812') {
+                openLock = 'Åpen'
+                updateView();
+            }
+        }
+        
+    </script>
+</body>
+</html>
