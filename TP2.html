@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+</head>
+<body onload="init();">
+    <canvas id="canvas">
+
+    </canvas>
+    <script>
+        const PUZZLE_DIFFICULTY = 5;
+        const PUZZLE_HOVER_INIT = '#009900';
+
+        var canvas;
+        var stage;
+
+        var img;
+        var pieces;
+        var puzzleWidth;
+        var puzzleHeight;
+        var pieceWidth;
+        var pieceHeight;
+        var currentPiece;
+        var currentDropPiece;
+
+        var mouse;
+
+        function init() {
+            img = new image();
+            img.addEventListener('load',onImage,false);
+            img.src = "";
+        }
+
+        function onImage(e) {
+            pieceWidth = Math.floor(img.width / PUZZLE_DIFFICULTY)
+            pieceHeight = Math.floor(img.height / PUZZLE_DIFFICULTY)
+        }
+    </script>
+</body>
+</html>

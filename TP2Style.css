@@ -1,0 +1,71 @@
+      div {
+            /* color:; */
+            /* background-color:; */
+            padding: 0;
+            margin: 0px;
+            border: solid black 1px;
+            width: 200px;
+            height: 200px;
+            float: left;
+            /* box-shadow: 0px 0px 20px white;
+            text-shadow: 0px 0px 10px #000000; */
+            cursor: grab;
+            font-family: 'Arial';
+            font-size: 25px;
+        }
+
+        div.førstPåLinja {
+            clear: left;
+        }
+
+            div.selected {
+                border: dashed orange 5px;
+            }
+    /* #r1k1 {
+        
+    } */
+    #r1k2 {
+        background-image: url('https://imgur.com/6jQ8TpB');
+    }
+    #r1k3 {
+        background: url();
+    }
+    #r1k4 {
+        background: url();
+    }
+    #r2k1 {
+        background: url();
+    }
+    #r2k2 {
+        background-image: url();
+    }
+    #r2k3 {
+        background: url();
+    }
+    #r2k4 {
+        background: url();
+    }
+    #r3k1 {
+        background: url();
+    }
+    #r3k2 {
+        background: url();
+    }
+    #r3k3 {
+        background: url();
+    }
+    #r3k4 {
+        background: url();
+    }
+    #r4k1 {
+        background: url();
+    }
+    #r4k2 {
+        background: url();
+    }
+    #r4k3 {
+        background: url();
+    }
+    #r4k4 {
+        background: url();
+    }
