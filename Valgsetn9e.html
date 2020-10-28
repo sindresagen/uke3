@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,44 +15,45 @@
         }
     </style>
 </head>
+
 <body>
-    <!-- <div id="info"></div> -->
-    <select name="color" id="color" onchange="changeColor(container,value)">
-        <option id="blk" value="black">Black</option>
-        <option id="dbl" value="darkblue">Dark blue</option>
-        <option id="lgry" value="lightgray">Light gray</option>
-        <option id="lgrn" value="lightgreen">Light green</option>
-        <option id="lred" value="salmon">Light red</option>
-    </select>
-
+    <div id="app"></div>
     <script>
-        var containerDiv = document.getElementById('cont');
-        var opt1 = document.getElementById('blk');
-        var opt2 = document.getElementById('dbl');
-        var opt3 = document.getElementById('lgry');
-        var opt4 = document.getElementById('lgrn');
-        var opt5 = document.getElementById('lred');
+        // model
+        var selectedColor = '';
+        var foregroundColor = '';
 
-        cont();
-
-        function cont() {
-            var isChosen1 = opt1.checked;
-            var isChosen2 = opt2.checked;
-            var isChosen3 = opt3.checked;
-            var isChosen4 = opt4.checked;
-            var isChosen5 = opt5.checked;
-
-            if (isChosen1|| isChosen2) {
-                
-            
+        // view
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = `
+        <br> 
+        <div>
+        <select name="color" id="color" onchange="changeColor(app,value)">
+            <option id="blk" value="black">Black</option>
+            <option id="dbl" value="darkblue">Dark blue</option>
+            <option id="lgry" value="lightgray">Light gray</option>
+            <option id="lgrn" value="lightgreen">Light green</option>
+            <option id="lred" value="salmon">Light red</option>
+        </select>
+        </div>
+        <div style="background-color: ${selectedColor}; color: ${foregroundColor}; width:500px; height:500px;">TXT</div>
+        `;
         }
+        // controller
+        function changeColor(id,colors) {
+            selectedColor = colors;
+            if (selectedColor === 'black' || selectedColor === 'darkblue') {
+                foregroundColor = 'white';
+            } else {
+                foregroundColor = 'black';
+            }
+            updateView();
+            // id.style.backgroundColor = color;
         }
 
-        function changeColor(id,color) {
-            id.style.backgroundColor = color;
-        }
-        
     </script>
-    <div id="container"></div>
+    <!-- <div id="container"></div> -->
 </body>
+
 </html>
