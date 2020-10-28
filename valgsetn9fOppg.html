@@ -10,22 +10,7 @@
     <h3>Pizza-bestilling</h3>
     <div id="info" style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
 
-    Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info()" />Tykk
-    <input id="tynnBunn" type="radio" name="bunn" onchange="info()" />Tynn <br />
-
-    Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info()" />Taco
-    <input id="fyllKylling" type="radio" name="fyll" onchange="info()" />Kylling
-    <input id="fyllBiff" type="radio" name="fyll" onchange="info()" />Biff
-    <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()" />Pepperoni<br />
-
-    Størrelse: <input id="stor" type="radio" name="str" onchange="info()" />Stor
-    <input id="middels" type="radio" name="str" onchange="info()" />Middels
-    <input id="liten" type="radio" name="str" onchange="info()" />Liten<br />
-
-    Crust: <input id="vanlig" type="radio" name="crust" onchange="info()" />Vanlig
-    <input id="cheese" type="radio" name="crust" onchange="info()" />Ostefyll
-
-    <button id="bestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
+    
     <ul>
         <li>Oppgave: Legg til et fyll til</li>
         <li>Oppgave: Legg til en ting til i pizza-bestillingen, for eksempel firkantet eller rund pizza</li>
@@ -47,10 +32,31 @@
         var crustCheese = document.getElementById('cheese');
 
         // view
-        
+        updateView();
+        function updateView() {
+            document.getElementById('info').innerHTML = `
+            Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info()" />Tykk
+            <input id="tynnBunn" type="radio" name="bunn" onchange="info()" />Tynn <br />
+
+            Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info()" />Taco
+            <input id="fyllKylling" type="radio" name="fyll" onchange="info()" />Kylling
+            <input id="fyllBiff" type="radio" name="fyll" onchange="info()" />Biff
+            <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()" />Pepperoni<br />
+
+            Størrelse: <input id="stor" type="radio" name="str" onchange="info()" />Stor
+            <input id="middels" type="radio" name="str" onchange="info()" />Middels
+            <input id="liten" type="radio" name="str" onchange="info()" />Liten<br />
+
+            Crust: <input id="vanlig" type="radio" name="crust" onchange="info()" />Vanlig
+            <input id="cheese" type="radio" name="crust" onchange="info()" />Ostefyll
+
+            <button id="bestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
+            `;
+        }
 
         // controller
         function info() {
+            
             if ((bunnTykk.checked || bunnTynn.checked) &&
                 (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked || fyllBiff.checked) &&
                 (crustVanlig.checked || crustCheese.checked) &&
@@ -76,6 +82,7 @@
                     infoDiv.innerHTML += '<li>crust</li>'
                 }
             }
+            updateView();
         }
     </script>
 </body>

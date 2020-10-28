@@ -6,66 +6,150 @@
             border: solid black 1px;
             width: 200px;
             height: 200px;
-            float: left;
-            /* box-shadow: 0px 0px 20px white;
-            text-shadow: 0px 0px 10px #000000; */
+            float: center;
+            box-shadow: 0px 0px 20px whitesmoke;
+            text-shadow: 0px 0px 10px #000000;
             cursor: grab;
             font-family: 'Arial';
             font-size: 25px;
         }
+        #grid {
+            width: 800px;
+            height: 800px;
+            border: 5px solid #ba6f00;
+            border-radius: 1px;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            padding: 0px;
+            margin: auto;
+            margin-top: 0px;
+            background-color: #BA6F00;
+            box-shadow: 0px 0px 10px white;
+          }
+        .ruter {
+            height: 200px;
+            width: 200px;
+            font-size: 0.1px;
+        }
 
+        body {
+            background-color: #000;
+
+        }
+        .button {
+            width: 170px;
+            display: inline-block;
+            border-radius: 5px;
+            background-color: magenta;
+            border: 2px solid #999;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: Impact;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 20px;
+            float: center;
+          }
+          
+          .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          
+          .button:hover span {
+            padding-right: 25px;
+            color: #ba6f00;
+            text-shadow: 0px 0px 10px #BA6F00;
+          }
+          
+          .button:hover span:after {
+            opacity: 1;
+            right: 0;
+            color: #ba6f00;
+            text-shadow: 0px 0px 10px #BA6F00;
+          }
         div.førstPåLinja {
             clear: left;
         }
 
-            div.selected {
-                border: dashed orange 5px;
-            }
+        div.selected {
+            border: dashed orange 5px;
+        }
     /* #r1k1 {
         
     } */
     #r1k2 {
-        background-image: url('https://imgur.com/6jQ8TpB');
+        background-image: url();
+        background-position: center;
     }
     #r1k3 {
         background: url();
+        background-position: center;
     }
     #r1k4 {
         background: url();
+        background-position: center;
     }
     #r2k1 {
         background: url();
+        background-position: center;
     }
     #r2k2 {
         background-image: url();
+        background-position: center;
     }
     #r2k3 {
         background: url();
+        background-position: center;
     }
     #r2k4 {
         background: url();
+        background-position: center;
     }
     #r3k1 {
         background: url();
+        background-position: center;
     }
     #r3k2 {
         background: url();
+        background-position: center;
     }
     #r3k3 {
         background: url();
+        background-position: center;
     }
     #r3k4 {
         background: url();
+        background-position: center;
     }
     #r4k1 {
         background: url();
+        background-position: center;
     }
     #r4k2 {
         background: url();
+        background-position: center;
     }
     #r4k3 {
         background: url();
+        background-position: center;
     }
     #r4k4 {
         background: url();
+        background-position: center;
     }

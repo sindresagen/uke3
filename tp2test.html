@@ -3,31 +3,38 @@
 <head>
     <title>Puzzle</title>
     <link rel="stylesheet" type="text/css" href="TP2Style.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="r1k1" onclick="trykk(this,'r1k2','r2k1')"></div>
-    <div id="r1k2" onclick="trykk(this,'r1k1','r1k3','r2k2')">r1k2</div>
-    <div id="r1k3" onclick="trykk(this,'r1k2','r2k3', 'r1k4')">r1k3</div>
-    <div id="r1k4" onclick="trykk(this,'r1k3', 'r2k4')">r1k4</div>
+   <div id="grid">
+    <div class="ruter" id="r1k1" onclick="trykk(this,'r1k2','r2k1')"></div>
+    <div class="ruter" id="r1k2" onclick="trykk(this,'r1k1','r1k3','r2k2')"><img src="https://i.imgur.com/6jQ8TpB.jpg"/></div>
+    <div class="ruter" id="r1k3" onclick="trykk(this,'r1k2','r2k3', 'r1k4')"><img src="https://i.imgur.com/h6yWvIs.jpg"/></div>
+    <div class="ruter" id="r1k4" onclick="trykk(this,'r1k3', 'r2k4')"><img src="https://i.imgur.com/BH6wsBJ.jpg"/></div>
 
-    <div id="r2k1" class="førstPåLinja" onclick="trykk(this,'r2k2','r1k1','r3k1','r2k1')">r2k1</div>
-    <div id="r2k2" onclick="trykk(this,'r1k2','r2k1','r2k3','r3k2')">r2k2</div>
-    <div id="r2k3" onclick="trykk(this,'r1k3','r2k2','r3k3','r2k4')">r2k3</div>
-    <div id="r2k4" onclick="trykk(this,'r1k4', 'r3k2', 'r3k4','r2k3')">r2k4</div>
+    <div class="ruter" id="r2k1" class="førstPåLinja" onclick="trykk(this,'r2k2','r1k1','r3k1','r2k1')"><img src="https://i.imgur.com/CSkFndu.jpg"/></div>
+    <div class="ruter" id="r2k2" onclick="trykk(this,'r1k2','r2k1','r2k3','r3k2')"><img src="https://i.imgur.com/mIVHfza.jpg"/></div>
+    <div class="ruter" id="r2k3" onclick="trykk(this,'r1k3','r2k2','r3k3','r2k4')"><img src="https://i.imgur.com/IGUGOBH.jpg"/></div>
+    <div class="ruter" id="r2k4" onclick="trykk(this,'r1k4', 'r3k2', 'r3k4','r2k3')"><img src="https://i.imgur.com/I7r59LH.jpg"/></div>
 
-    <div id="r3k1" class="førstPåLinja" onclick="trykk(this,'r2k1','r3k2','r4k1')">r3k1</div>
-    <div id="r3k2" onclick="trykk(this,'r3k1','r2k2','r3k3','r4k2')">r3k2</div>
-    <div id="r3k3" onclick="trykk(this,'r2k3','r3k2','r3k4','r4k3')">r3k3</div>
-    <div id="r3k4" onclick="trykk(this,'r3k3','r2k4','r4k4')">r3k4</div>
+    <div class="ruter" id="r3k1" class="førstPåLinja" onclick="trykk(this,'r2k1','r3k2','r4k1')"><img src="https://i.imgur.com/9fbolNb.jpg"/></div>
+    <div class="ruter" id="r3k2" onclick="trykk(this,'r3k1','r2k2','r3k3','r4k2')"><img src="https://i.imgur.com/z8QgpQh.jpg"/></div>
+    <div class="ruter" id="r3k3" onclick="trykk(this,'r2k3','r3k2','r3k4','r4k3')"><img src="https://i.imgur.com/F0ddgNl.jpg"/></div>
+    <div class="ruter" id="r3k4" onclick="trykk(this,'r3k3','r2k4','r4k4')"><img src="https://i.imgur.com/cx07wvl.jpg"/></div>
 
-    <div id="r4k1" class="førstPåLinja" onclick="trykk(this,'r3k1','r4k2')">r4k1</div>
-    <div id="r4k2" onclick="trykk(this,'r4k1','r3k2','r4k3','r4k2')">r4k2</div>
-    <div id="r4k3" onclick="trykk(this,'r4k2', 'r3k3','r4k4')">r4k3</div>
-    <div id="r4k4" onclick="trykk(this,'r3k4', 'r4k3')">r4k4</div>
+    <div class="ruter" id="r4k1" class="førstPåLinja" onclick="trykk(this,'r3k1','r4k2')"><img src="https://i.imgur.com/mi79HIJ.jpg"/></div>
+    <div class="ruter" id="r4k2" onclick="trykk(this,'r4k1','r3k2','r4k3','r4k2')"><img src="https://i.imgur.com/5Xc0WHu.jpg"/></div>
+    <div class="ruter" id="r4k3" onclick="trykk(this,'r4k2', 'r3k3','r4k4')"><img src="https://i.imgur.com/COhJ1QE.jpg"/></div>
+    <div class="ruter" id="r4k4" onclick="trykk(this,'r3k4', 'r4k3')"><img src="https://i.imgur.com/TSowcka.jpg"/></div>
+   </div>
+    <br>
+    <br>
+    <br>
+    <button class="button" onclick="enableCheat()" style="vertical-align:middle"><span>word.exe</span></button>
     
     <script>
-
+       var cheat;
+       //vanlig funksjon
         function trykk(tagElement, alt1, alt2, alt3, alt4) {
             if(document.getElementById(alt1).innerHTML=='') {
                document.getElementById(alt1).innerHTML = tagElement.innerHTML;
@@ -44,9 +51,83 @@
             if(document.getElementById(alt4).innerHTML=='') {
                document.getElementById(alt4).innerHTML = tagElement.innerHTML;
                tagElement.innerHTML = '';
-            }
+            }         
         }
 
+
+
+
+        //cheat knapp
+        
+        function trykkCheat(tagElement, alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8, alt9, alt10, alt11, alt12, alt13, alt14, alt15, alt16) {
+           if (cheat === true && document.getElementById(alt1).innerHTML=='') {
+              document.getElementById(alt1).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt2).innerHTML=='') {
+              document.getElementById(alt2).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt3).innerHTML=='') {
+              document.getElementById(alt3).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt4).innerHTML=='') {
+              document.getElementById(alt4).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt5).innerHTML=='') {
+              document.getElementById(alt5).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt6).innerHTML=='') {
+              document.getElementById(alt6).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt7).innerHTML=='') {
+              document.getElementById(alt7).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt8).innerHTML=='') {
+              document.getElementById(alt8).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt9).innerHTML=='') {
+              document.getElementById(alt9).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt10).innerHTML=='') {
+              document.getElementById(alt10).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt11).innerHTML=='') {
+              document.getElementById(alt11).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt12).innerHTML=='') {
+              document.getElementById(alt12).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt13).innerHTML=='') {
+              document.getElementById(alt13).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt14).innerHTML=='') {
+              document.getElementById(alt14).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt15).innerHTML=='') {
+              document.getElementById(alt15).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+           if (cheat === true && document.getElementById(alt16).innerHTML=='') {
+              document.getElementById(alt16).innerHTML = tagElement.innerHTML;
+              tagElement.innerHTML = '';
+           }
+        }
+        function enableCheat () {
+           cheat = cheat ? false : true;
+        }
         </script>
 </body>
 </html>
