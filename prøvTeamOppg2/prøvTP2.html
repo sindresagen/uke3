@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Puzzle</title>
-    <link rel="stylesheet" type="text/css" href="TP2Style.css">
+    <link rel="stylesheet" type="text/css" href="prøvTP2Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="tp2js.js"> </script>
+    <script type="text/javascript" src="prøvtp2js.js"> </script>
 </head>
 <body>
    <div id="overordnet">
@@ -83,13 +83,13 @@
 
 
         //cheat knapp
-        document.getElementById('grid2').style.zIndex=0;
-        document.getElementById('grid1').style.zIndex=1;
         document.getElementById('grid2').style.visibility= 'hidden';
-        document.getElementById('grid1').style.visibility= 'visible';
         var puzzleType = false;
+
         function changePuzzle() {
+
          puzzleType = puzzleType ? false : true;
+
          if (puzzleType === false) {
             document.getElementById('grid2').style.visibility = 'hidden';
             document.getElementById('grid1').style.visibility = 'visible';

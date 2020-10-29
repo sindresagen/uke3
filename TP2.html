@@ -1,42 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle</title>
+<link rel="stylesheet" type="text/css" href="TP2Style.css">
+
 </head>
-<body onload="init();">
-    <canvas id="canvas">
+<style>
 
-    </canvas>
-    <script>
-        const PUZZLE_DIFFICULTY = 5;
-        const PUZZLE_HOVER_INIT = '#009900';
 
-        var canvas;
-        var stage;
+</style>
+<body>
 
-        var img;
-        var pieces;
-        var puzzleWidth;
-        var puzzleHeight;
-        var pieceWidth;
-        var pieceHeight;
-        var currentPiece;
-        var currentDropPiece;
+    <div id="grid2">
+        <div id="box1" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box2" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box3" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box4" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-        var mouse;
+        <div id="box5" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box6" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box7" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box8" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-        function init() {
-            img = new image();
-            img.addEventListener('load',onImage,false);
-            img.src = "";
-        }
+        <div id="box9" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box10" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box11" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box12" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-        function onImage(e) {
-            pieceWidth = Math.floor(img.width / PUZZLE_DIFFICULTY)
-            pieceHeight = Math.floor(img.height / PUZZLE_DIFFICULTY)
-        }
-    </script>
+        <div id="box13" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box14" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box15" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="box16" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+<script type="text/javascript" src="tp2js.js"> </script>
+
 </body>
 </html>
