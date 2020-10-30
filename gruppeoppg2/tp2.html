@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Puzzle</title>
+    <link rel="stylesheet" type="text/css" href="TP2Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="tp2js.js"> </script>
+</head>
+<body>
+   <div id="overordnet">
+      <div id="grid1">
+         <div class="ruter" id="r1k1" onclick="trykk(this,'r1k2','r2k1')"></div>
+         <div class="ruter" id="r1k2" onclick="trykk(this,'r1k1','r1k3','r2k2')"><img src="https://i.imgur.com/6jQ8TpB.jpg"/></div>
+         <div class="ruter" id="r1k3" onclick="trykk(this,'r1k2','r2k3', 'r1k4')"><img src="https://i.imgur.com/h6yWvIs.jpg"/></div>
+         <div class="ruter" id="r1k4" onclick="trykk(this,'r1k3', 'r2k4')"><img src="https://i.imgur.com/BH6wsBJ.jpg"/></div>
+
+         <div class="ruter" id="r2k1" class="førstPåLinja" onclick="trykk(this,'r2k2','r1k1','r3k1','r2k1')"><img src="https://i.imgur.com/CSkFndu.jpg"/></div>
+         <div class="ruter" id="r2k2" onclick="trykk(this,'r1k2','r2k1','r2k3','r3k2')"><img src="https://i.imgur.com/z8QgpQh.jpg"/></div>
+         <div class="ruter" id="r2k3" onclick="trykk(this,'r1k3','r2k2','r3k3','r2k4')"><img src="https://i.imgur.com/IGUGOBH.jpg"/></div>
+         <div class="ruter" id="r2k4" onclick="trykk(this,'r1k4', 'r3k2', 'r3k4','r2k3')"><img src="https://i.imgur.com/I7r59LH.jpg"/></div>
+
+         <div class="ruter" id="r3k1" class="førstPåLinja" onclick="trykk(this,'r2k1','r3k2','r4k1')"><img src="https://i.imgur.com/9fbolNb.jpeg"/></div>
+         <div class="ruter" id="r3k2" onclick="trykk(this,'r3k1','r2k2','r3k3','r4k2')"><img src="https://i.imgur.com/mIVHfza.jpeg"/></div>
+         <div class="ruter" id="r3k3" onclick="trykk(this,'r2k3','r3k2','r3k4','r4k3')"><img src="https://i.imgur.com/F0ddgNl.jpg"/></div>
+         <div class="ruter" id="r3k4" onclick="trykk(this,'r3k3','r2k4','r4k4')"><img src="https://i.imgur.com/cx07wvl.jpg"/></div>
+
+         <div class="ruter" id="r4k1" class="førstPåLinja" onclick="trykk(this,'r3k1','r4k2')"><img src="https://i.imgur.com/mi79HIJ.jpg"/></div>
+         <div class="ruter" id="r4k2" onclick="trykk(this,'r4k1','r3k2','r4k3','r4k2')"><img src="https://i.imgur.com/5Xc0WHu.jpg"/></div>
+         <div class="ruter" id="r4k3" onclick="trykk(this,'r4k2', 'r3k3','r4k4')"><img src="https://i.imgur.com/COhJ1QE.jpg"/></div>
+         <div class="ruter" id="r4k4" onclick="trykk(this,'r3k4', 'r4k3')"><img src="https://i.imgur.com/TSowcka.jpg"/></div>
+      </div>
+
+         <div id="grid2">
+            <div id="box1" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box2" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box3" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box4" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <div id="box5" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box6" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box7" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box8" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <div id="box9" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box10" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box11" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box12" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+            <div id="box13" class="førstPåLinja" class="ruter" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box14" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box15" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="box16" draggable="true" class="ruter" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+         </div>
+
+
+            <button class="button" onclick="changePuzzle()" style="vertical-align:middle"><span>Switch Puzzletype</span></button>
+            
+            <button class="button2" onclick="startTimer(40, display)" style="vertical-align:middle"><span>Timer</span></button>
+           
+            <div id="safeTimer">
+               <p id="safeTimerDisplay">00:30</p>
+               </div>
+    <br>
+    <br>
+    <br>
+<span>span></span>
+    <script>
+       var audio = new Audio('addam.mp3');
+       audio.volume = 0.2;
+                audio.play();
+       
+
+// timer
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var time = 60 / 2,
+        display = document.querySelector('#safeTimerDisplay');
+    startTimer(time, display);
+};
+
+
+// bytte spill   
+         function trykk(tagElement, alt1, alt2, alt3, alt4) {
+            if(document.getElementById(alt1).innerHTML=='') {
+               document.getElementById(alt1).innerHTML = tagElement.innerHTML;
+               tagElement.innerHTML = '';
+            }   
+            if(document.getElementById(alt2).innerHTML=='') {
+               document.getElementById(alt2).innerHTML = tagElement.innerHTML;
+               tagElement.innerHTML = '';
+            }
+            if(document.getElementById(alt3).innerHTML=='') {
+               document.getElementById(alt3).innerHTML = tagElement.innerHTML;
+               tagElement.innerHTML = '';
+            }
+            if(document.getElementById(alt4).innerHTML=='') {
+               document.getElementById(alt4).innerHTML = tagElement.innerHTML;
+               tagElement.innerHTML = '';
+            }         
+        };
+
+
+
+
+//cheat knapp
+        document.getElementById('grid2').style.zIndex=0;
+        document.getElementById('grid1').style.zIndex=1;
+        document.getElementById('grid2').style.visibility= 'hidden';
+        document.getElementById('grid1').style.visibility= 'visible';
+        var puzzleType = false;
+        function changePuzzle() {
+         puzzleType = puzzleType ? false : true;
+         if (puzzleType === false) {
+            document.getElementById('grid2').style.visibility = 'hidden';
+            document.getElementById('grid1').style.visibility = 'visible';
+            document.getElementById('grid1').style.zIndex = 1;
+            document.getElementById('grid2').style.zIndex = 0;
+
+         } else if (puzzleType === true) {
+            document.getElementById('grid1').style.visibility = 'hidden';
+            document.getElementById('grid2').style.visibility = 'visible';
+            document.getElementById('grid1').style.zIndex = 0;
+            document.getElementById('grid2').style.zIndex = 1;
+         }
+            
+      }
+        
+
+        
+        </script>
+</body>
+</html>
